@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 74b0dd8df26ad8648af67e105f47320a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - balaPrefab: {fileID: 1212604823994896153, guid: 96889d89c63d64e43bf375265c0e0d84, type: 3}
+  - puntoCanon: {instanceID: 0}
+  - canonRenderer: {instanceID: 0}
+  - textoBalas: {instanceID: 0}
+  - diana: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
