@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6540426053612125196}
   - component: {fileID: 7344102484089829679}
   - component: {fileID: 1591702258439205079}
-  - component: {fileID: 7553589131489563903}
+  - component: {fileID: -5514323537733969068}
+  - component: {fileID: 8270628876509389185}
   - component: {fileID: -3391885914638025287}
   m_Layer: 0
   m_Name: Bala
@@ -85,7 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7553589131489563903
+--- !u!135 &-5514323537733969068
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,6 +102,27 @@ SphereCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &8270628876509389185
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212604823994896153}
+  m_Material: {fileID: 13400000, guid: 0bdf74494ad28a6429f448180649b4e7, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
