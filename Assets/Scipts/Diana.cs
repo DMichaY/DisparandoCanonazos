@@ -5,12 +5,12 @@ public class Diana : MonoBehaviour
     private int cantidadImpactos = 0; // Contador de impactos
     private Renderer dianaRenderer;  // Referencia al Renderer para cambiar el color
     private bool rotando = false;   // Flag para saber si debe rotar
-    private bool colorCambiado = false; // Flag para controlar si ya cambió de color
+    private bool colorCambiado = false; // Flag para controlar si ya cambio de color
 
     // Lista de colores aleatorios para cambiar
     private Color[] coloresAleatorios = { Color.red, Color.green, Color.blue, Color.yellow, Color.magenta, Color.cyan };
 
-    // Velocidad de rotación
+    // Velocidad de rotacion
     public float velocidadRotacion = 20f;
 
     void Start()
@@ -51,7 +51,7 @@ public class Diana : MonoBehaviour
 
     void IniciarRotacion()
     {
-        // Activar la rotación
+        // Activar la rotacion
         rotando = true;
     }
 
@@ -73,7 +73,7 @@ public class Diana : MonoBehaviour
         // Si la diana debe rotar, gira solo sobre el eje Y
         if (rotando)
         {
-            // Mantener la rotación actual en X y Z, solo cambia la rotación en Y
+            // Mantener la rotacion actual en X y Z, solo cambia la rotacion en Y
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + velocidadRotacion * Time.deltaTime, transform.rotation.eulerAngles.z);
         }
     }

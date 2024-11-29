@@ -3,7 +3,7 @@ using UnityEngine;
 public class CuboAccion : MonoBehaviour
 {
     public enum TipoAccion { Disparar, Borrar, DisparoAleatorio }
-    public TipoAccion accion; // El tipo de acción que realiza este cubo
+    public TipoAccion accion; // El tipo de accion que realiza este cubo
 
     private Disparo disparo;
     private DisparoAleatorio disparoAleatorio;
@@ -18,7 +18,7 @@ public class CuboAccion : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Detectar el tipo de acción y ejecutar la función correspondiente
+        // Detectar el tipo de accion y ejecutar la funcion correspondiente
         switch (accion)
         {
             case TipoAccion.Disparar:
@@ -30,7 +30,7 @@ public class CuboAccion : MonoBehaviour
                 break;
 
             case TipoAccion.DisparoAleatorio:
-                if (disparoAleatorio != null) disparoAleatorio.DispararAleatorio();  // Cambié Disparar a DispararAleatorio
+                if (disparoAleatorio != null) disparoAleatorio.DispararAleatorio();  // Cambio Disparar a DispararAleatorio
                 break;
         }
     }

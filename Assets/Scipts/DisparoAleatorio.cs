@@ -7,10 +7,10 @@ public class DisparoAleatorio : MonoBehaviour
     private GameManager gameManager; // Referencia al GameManager
     private Color[] colores = { Color.red, Color.green, Color.blue, Color.yellow, Color.white };
 
-    public float fuerzaMinima = 5f;   // Fuerza mínima para la bala
-    public float fuerzaMaxima = 20f;  // Fuerza máxima para la bala
-    public float escalaMinima = 0.5f; // Tamaño mínimo de la bala
-    public float escalaMaxima = 2f;   // Tamaño máximo de la bala
+    public float fuerzaMinima = 5f;   // Fuerza manima para la bala
+    public float fuerzaMaxima = 20f;  // Fuerza maxima para la bala
+    public float escalaMinima = 0.5f; // TamaÃ±o manimo de la bala
+    public float escalaMaxima = 2f;   // TamaÃ±o maximo de la bala
 
     private void Start()
     {
@@ -18,7 +18,7 @@ public class DisparoAleatorio : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         if (gameManager == null)
         {
-            Debug.LogError("¡GameManager no encontrado! Asegúrate de que está en la escena.");
+            Debug.LogError("Â¡GameManager no encontrado! Asegurate de que este en la escena.");
         }
     }
 
@@ -27,34 +27,34 @@ public class DisparoAleatorio : MonoBehaviour
         // Obtener todas las dianas activas con el tag "Diana"
         GameObject[] dianas = GameObject.FindGameObjectsWithTag("Diana");
 
-        // Si hay dianas, disparar a la primera; si no, disparar en una dirección aleatoria
+        // Si hay dianas, disparar a la primera; si no, disparar en una direccion aleatoria
         Transform objetivo = null;
 
         if (dianas.Length > 0)
         {
             objetivo = dianas[0].transform;  // Tomar la primera diana encontrada
-            Debug.Log($"Disparando a la diana en la posición {objetivo.position}");
+            Debug.Log($"Disparando a la diana en la posicion {objetivo.position}");
         }
         else
         {
-            // No hay dianas, disparar en una dirección aleatoria
-            // Podemos elegir un punto aleatorio en el espacio, o en un plano específico
+            // No hay dianas, disparar en una direccion aleatoria
+            // Podemos elegir un punto aleatorio en el espacio, o en un plano especofico
             Vector3 direccionAleatoria = new Vector3(Random.Range(-10f, 10f), 0f, Random.Range(-10f, 10f));
             objetivo = new GameObject("ObjetivoAleatorio").transform;
             objetivo.position = direccionAleatoria;
-            Debug.Log($"No hay dianas. Disparando en dirección aleatoria: {direccionAleatoria}");
+            Debug.Log($"No hay dianas. Disparando en direccion aleatoria: {direccionAleatoria}");
         }
 
-        // Asegurar que el puntoCanon apunte al objetivo (diana o dirección aleatoria)
+        // Asegurar que el puntoCanon apunte al objetivo (diana o direccion aleatoria)
         puntoCanon.LookAt(objetivo);
 
-        // Instanciar la bala en la posición del cañón (puntoCanon)
+        // Instanciar la bala en la posicion del canon (puntoCanon)
         GameObject bala = Instantiate(prefabBala, puntoCanon.position, Quaternion.identity);
         Rigidbody rb = bala.GetComponent<Rigidbody>();
 
         if (rb == null)
         {
-            Debug.LogError("¡La bala no tiene un Rigidbody! Asegúrate de que el prefab de la bala lo tiene.");
+            Debug.LogError("Â¡La bala no tiene un Rigidbody! Asegurate de que el prefab de la bala lo tiene.");
             return;
         }
 
@@ -63,9 +63,9 @@ public class DisparoAleatorio : MonoBehaviour
         float escalaAleatoria = Random.Range(escalaMinima, escalaMaxima);
         Color colorAleatorio = colores[Random.Range(0, colores.Length)];
 
-        // Ajustar el tamaño de la bala
+        // Ajustar el tamano de la bala
         bala.transform.localScale = Vector3.one * escalaAleatoria;
-        Debug.Log($"Tamaño de la bala ajustado a {escalaAleatoria}");
+        Debug.Log($"Tamano de la bala ajustado a {escalaAleatoria}");
 
         // Cambiar el color de la bala
         Renderer renderer = bala.GetComponent<Renderer>();
@@ -76,10 +76,10 @@ public class DisparoAleatorio : MonoBehaviour
         }
         else
         {
-            Debug.LogError("¡La bala no tiene un Renderer! Asegúrate de que el prefab de la bala tiene un material.");
+            Debug.LogError("Â¡La bala no tiene un Renderer! Asegurate de que el prefab de la bala tiene un material.");
         }
 
-        // Calcular dirección y aplicar fuerza
+        // Calcular direccion y aplicar fuerza
         Vector3 direccion = (objetivo.position - puntoCanon.position).normalized;
         rb.AddForce(direccion * fuerzaAleatoria, ForceMode.Impulse);
         Debug.Log($"Fuerza aplicada a la bala: {fuerzaAleatoria}");

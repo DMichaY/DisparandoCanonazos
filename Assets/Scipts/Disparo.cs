@@ -29,16 +29,16 @@ public class Disparo : MonoBehaviour
         }
         else
         {
-            // Si no hay dianas, disparar en una dirección aleatoria
+            // Si no hay dianas, disparar en una direccion aleatoria
             Vector3 direccionAleatoria = new Vector3(Random.Range(-10f, 10f), 0f, Random.Range(-10f, 10f));
             objetivo = new GameObject("ObjetivoAleatorio").transform;
             objetivo.position = direccionAleatoria;
         }
 
-        // Mantener la rotación inicial del PuntoCanon pero asegurarnos de que apunte hacia el objetivo
+        // Mantener la rotacion inicial del PuntoCanon pero asegurarnos de que apunte hacia el objetivo
         Vector3 direccion = (objetivo.position - puntoCanon.position).normalized;
 
-        // Instanciar la bala en la posición del PuntoCanon
+        // Instanciar la bala en la posicion del PuntoCanon
         GameObject bala = Instantiate(prefabBala, puntoCanon.position, Quaternion.identity);
 
         // Asegurar que el GameManager incremente el contador de balas
@@ -49,10 +49,10 @@ public class Disparo : MonoBehaviour
 
         Rigidbody rb = bala.GetComponent<Rigidbody>();
 
-        // Aplicar fuerza a la bala para dispararla hacia la diana o en dirección aleatoria
+        // Aplicar fuerza a la bala para dispararla hacia la diana o en direccion aleatoria
         rb.AddForce(direccion * fuerzaDisparo, ForceMode.Impulse);
 
-        // Si se disparó hacia una dirección aleatoria, eliminar el objeto temporal "ObjetivoAleatorio"
+        // Si se disparo hacia una direccion aleatoria, eliminar el objeto temporal "ObjetivoAleatorio"
         if (objetivo.name == "ObjetivoAleatorio")
         {
             Destroy(objetivo.gameObject);

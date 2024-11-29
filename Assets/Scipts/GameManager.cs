@@ -10,10 +10,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Verificar que el textoBalas está asignado correctamente en el Inspector
+        // Verificar que el textoBalas este asignado correctamente en el Inspector
         if (textoBalas == null)
         {
-            Debug.LogError("¡No se ha asignado el texto de balas en GameManager!");
+            Debug.LogError("Â¡No se ha asignado el texto de balas en GameManager!");
         }
 
         // Inicializamos las dianas
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("¡Texto de balas no asignado!");
+            Debug.LogError("Â¡Texto de balas no asignado!");
         }
     }
 
